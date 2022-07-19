@@ -4,7 +4,7 @@ public class StringMain1 {
 
 	public static void main(String[] args) {
 		
-		String str1 = "ddd";
+		/*String str1 = "ddd";
 		String str2 = "ddd";
 		String str3 = new String("ddd");
 		
@@ -26,7 +26,10 @@ public class StringMain1 {
 		ss2.studyIndexOf();
 		ss2.studyIndexOfEx1();
 		ss2.studySubString();
-		ss2.ex2();
+		ss2.ex2();*/
+		
+		StringStudy3 ss3 = new StringStudy3();
+		ss3.studySplit3();
 		
 	}
 
