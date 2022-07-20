@@ -15,6 +15,9 @@ public class SplitMain {
 		System.out.println(number);
 		System.out.println(number.getClass().getTypeName());
 		
+		WorkerDTO[] workers2 =  ws.init2();
+		wv.viewAll(workers2);
+		
 	}
 
 }

@@ -1,5 +1,7 @@
 package kr.co.lang.string.ex1;
 
+import java.util.StringTokenizer;
+
 public class WorkerService {
 
 	//private String info;
@@ -25,6 +27,22 @@ public class WorkerService {
 			infos[i] = infos[i].trim();
 			String[] worker = infos[i].split("-");
 			workers[i] = new WorkerDTO(worker[0], worker[1], worker[2], worker[3]);
+		}
+		
+		return workers;
+	}
+	
+	public WorkerDTO[] init2() {
+		StringTokenizer stringTokenizer = new StringTokenizer(sb.toString(), ", ");
+		int workerCount = stringTokenizer.countTokens();
+		WorkerDTO[] workers = new WorkerDTO[workerCount];
+		int count = 0;
+		
+		while(stringTokenizer.hasMoreTokens()) {
+			StringTokenizer workerInfo = new StringTokenizer(stringTokenizer.nextToken(), "-");
+			WorkerDTO worker = new WorkerDTO(workerInfo.nextToken(), workerInfo.nextToken(), workerInfo.nextToken(), workerInfo.nextToken());
+			workers[count] = worker;
+			count++;
 		}
 		
 		return workers;
