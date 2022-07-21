@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WeatherController {
+	
+	//결합도가 강하다(높다) : 클래스 내부에서 객체 생성, 선언과 동시에 초기화
+	//결압도가 약하다(낮다) : 매개변수를 통해서 만들어진 객체를 주입, 생성자의 매개변수로 받는다
 
 	//start메소드, 1번누르면 날씨정보 초기화 - init() 2.전국날씨출력 3.지역날씨검색 4.지역정보추가 5.지역정보삭제 6.종료
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<CityDTO> cities = new ArrayList<>();
-		WeatherService ws = new WeatherService();
+		WeatherService ws = new WeatherService();	//생성자에서 만들어지게 해도된다.
 		WeatherView wv = new WeatherView();
 		
 		boolean isContinue = true;
